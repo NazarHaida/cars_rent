@@ -37,9 +37,8 @@ const CustomButton = ({
 };
 
 const CarCard = ({car}: CarCardProps) => {
-    const {city_mpg, drive, fuel_type, make, model, transmission, year} = car;
+    const {drive, fuel_type, make, model, transmission, year} = car;
     const carRent = calculateCarRent(year);
-    console.log(carRent, city_mpg, year)
     const [isOpen, setIsOpen] = useState(false);
 
     return <div className={"car-card group"}>
@@ -95,7 +94,7 @@ const CarCard = ({car}: CarCardProps) => {
             </div>
         </div>
 
-        <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} setIsOpen={setIsOpen} car={car}/>
+        <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car} />
     </div>
 }
 
