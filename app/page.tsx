@@ -4,16 +4,18 @@ import SearchBar from "@/components/SearchBar";
 import {fetchData} from "@/utils";
 import CarCard from "@/components/CarCard";
 import {fuels, yearsOfProduction} from "@/constants";
-import {HomeProps} from "@/types";
+import {CarProps, HomeProps} from "@/types";
 
 export default async function Home({searchParams}: HomeProps) {
-    const allCars = await fetchData({
+    const allCars: CarProps[] = await fetchData({
         manufacturer: searchParams.manufacturer || "",
         year: searchParams.year || 2022,
         fuel: searchParams.fuel || "",
         limit: searchParams.limit || 10,
         model: searchParams.model || "",
-    });    const isDataEmpty = allCars.length === 0;
+    });
+    const isDataEmpty = allCars.length === 0;
+    console.log(allCars)
   return (
     <main>
       <Hero/>
@@ -32,13 +34,12 @@ export default async function Home({searchParams}: HomeProps) {
                 {!isDataEmpty ?
                     <div className={"home__cars-wrapper"}>
                         {allCars.map((car) => (
-                            <CarCard key={car} car = {car} />
+                            <CarCard key={car.model} car = {car} />
                         ))}
                     </div>
                     :
                     <div className={"home__cars-container"}>
                     <h2 className={"text-black text-xl font-bold"}>Oops, no results</h2>
-                    <p>{allCars?.message}</p>
                     <div>
                 </div>
                 </div>}
