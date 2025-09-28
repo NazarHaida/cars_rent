@@ -13,7 +13,10 @@ const SearchManufacturer = ({manufacturer, setManufacturer }: ManufacturingProps
 
     return (
         <div className={"search-manufacturer"}>
-            <Combobox value={manufacturer} onChange={setManufacturer}>
+            <Combobox
+                value={manufacturer}
+                onChange={(value: string | null) => setManufacturer(value ?? "")}
+            >
             <div className="relative w-full">
                 <Combobox.Button className={"absolute top-[14px]"}>
                     <Image src={"/car-logo.svg"} alt={"Logo"} className="ml-4" width={20} height={20} />
