@@ -1,6 +1,6 @@
 "use client"
 import {ManufacturingProps} from "@/types";
-import {Combobox, ComboboxOption, Transition} from "@headlessui/react";
+import {Combobox, Transition} from "@headlessui/react";
 import Image from "next/image";
 import {Fragment, useState} from "react";
 import {manufacturers} from "@/constants";
@@ -29,7 +29,7 @@ const SearchManufacturer = ({manufacturer, setManufacturer }: ManufacturingProps
                     <Combobox.Options className={"search-manufacturer__options"}>
                         { filteredManufacturers.map((item) => (
                             <Combobox.Option value={item} key={item} className={({active}) => `relative search-manufacturer__option ${active ? 'bg-blue-500 text-white' : 'text-gray-500'}`}>
-                                {({ focus, selected }) => (
+                                {({selected }) => (
                                     <div className={clsx('group flex gap-2')}>
                                         {selected && <CheckIcon className="size-5" />}
                                         {item}

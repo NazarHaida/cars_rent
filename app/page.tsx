@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {Hero} from "@/components";
 import CustomFilter from "@/components/CustomFilter";
 import SearchBar from "@/components/SearchBar";
