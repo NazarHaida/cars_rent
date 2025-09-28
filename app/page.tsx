@@ -4,8 +4,9 @@ import SearchBar from "@/components/SearchBar";
 import {fetchData} from "@/utils";
 import CarCard from "@/components/CarCard";
 import {fuels, yearsOfProduction} from "@/constants";
+import {HomeProps} from "@/types";
 
-export default async function Home({searchParams}: { searchParams: any}) {
+export default async function Home({searchParams}: HomeProps) {
     const allCars = await fetchData({
         manufacturer: searchParams.manufacturer || "",
         year: searchParams.year || 2022,

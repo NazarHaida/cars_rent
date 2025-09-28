@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import {CarProps} from "@/types";
+import {CarProps, CustomButtonProps} from "@/types";
 import {calculateCarRent, generateCarImageUrl} from "@/utils";
 import {useState} from "react";
 import CarDetails from "@/components/CarDetails";
@@ -15,7 +15,7 @@ const CustomButton = ({
   textStyles,
   rightIcon,
   handleClick,
-}) => {
+}: CustomButtonProps) => {
   return (
     <button
       type="button"

@@ -9,11 +9,10 @@ import {generateCarImageUrl} from "@/utils";
 interface CarDetailsProps {
     isOpen: boolean;
     closeModal: () => void;
-    setIsOpen,
     car: CarProps;
 }
 
-const CarDetails: React.FC<CarDetailsProps> = ({isOpen, closeModal, setIsOpen, car}: CarDetailsProps) => {
+const CarDetails: React.FC<CarDetailsProps> = ({isOpen, closeModal, car}: CarDetailsProps) => {
     console.log(car)
     return <>
     <Transition appear show={isOpen} as={Fragment}>
