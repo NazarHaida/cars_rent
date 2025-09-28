@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+      domains:['cdn.imagin.studio', 'cars-by-api-ninjas.p.rapidapi.com']
+  }
 };
 
 export default nextConfig;
